@@ -8,7 +8,7 @@ This algorithm is specifically designed to replicate the conditions of isolation
 
 This filtering was necessary to carry out the realization of an Open Source database that collects probe request ground truth signatures of individual smartphones (various models and operating systems) that randomise their MAC address.
 
-The present script has been tested and verified using as input the outputs of our [WiFi-Sniffer script](https://github.com/luciapintor/WiFi-Sniffer), that uses a file naming structure that specifies device ID, timestamp (as yyyy-month-dd-hour-minute-second, mode and channel (i.e. A-ts-2021-May-21-h11-m57-s24-modeS-ch-1.pcap). 
+The present script has been tested and verified using as input the outputs of our [WiFi-Sniffer script](https://github.com/luciapintor/WiFi-Sniffer), that uses a file naming structure that specifies device ID, timestamp, mode and channel (i.e. A-ts-2021-May-21-h11-m57-s24-modeS-ch-1.pcap). 
 
 By running the sniffing algorithm, it is possible to collect data on several channels contemporaneously: the names of the generated files will be almost identical, except for the last portion that refers to the channel. This allows us to easily group all files referring to the same capture.
 
