@@ -1,8 +1,16 @@
 # SnifferFiltering
 
-This algorithm aims to filter .pcap files collected by our [WiFi-Sniffer script](https://github.com/luciapintor/WiFi-Sniffer), under particular conditions, i.e. the sniffer must be very close to the device to be analysed (10 - 20 cm), and there must be no other sources of random Wi-Fi packets within two metres.
-Packets from known sources using factory mac addresses (i.e. embedded interfaces of the sniffer) can be excluded by adding their macs to the embedded_interfaces list in the env_variables.py file.
-The other main parameters of the algorithm can also be modified via this file.
+This script performs a power filtering of pcap files, exploiting the transmission pattern of probe requests, which are sent in batches during short time windows, that we will call bursts later on. 
+
+Additionally packets from known sources using factory mac addresses (i.e. embedded interfaces of the sniffer) can be excluded by adding their macs to the embedded_interfaces list in the env_variables.py file. The other main parameters of the algorithm can also be modified via this file.
+
+This algorithm is specifically designed to replicate the conditions of isolation of an anechoic chamber under particular conditions, i.e. during the capture the sniffer must be very close to the device to be analysed (10 - 20 cm), and there must be no other sources of random Wi-Fi packets within two metres. 
+
+This filtering was necessary to carry out the realization of an Open Source database that collects probe request ground truth signatures of individual smartphones (various models and operating systems) that randomise their MAC address.
+
+The present script has been tested and verified using as input the outputs of our [WiFi-Sniffer script](https://github.com/luciapintor/WiFi-Sniffer), that uses a file naming structure that specifies device ID, timestamp (as yyyy-month-dd-hour-minute-second, mode and channel (i.e. A-ts-2021-May-21-h11-m57-s24-modeS-ch-1.pcap). 
+
+By running the sniffing algorithm, it is possible to collect data on several channels contemporaneously: the names of the generated files will be almost identical, except for the last portion that refers to the channel. This allows us to easily group all files referring to the same capture.
 
 By running the main.py script, the programme 1) groups together files referring to the same capture, and 2) converts them into a Python structure for the next steps, 3) the filtering and 4) the creation of graphs and statistics.
 
