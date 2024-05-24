@@ -6,7 +6,10 @@ from utils import frequency2channel
 
 def merge_pkt(capture_files, input_folder_name, embedded_interfaces=None):
     """
-    This function merges all the packets inside the pcap files in the list capture_files and removes APs.
+    This function merges all the packets related to the same capture.
+    Usually there are 3 files for each capture referring respectively to channels 1, 6, and 11.
+    The output is a dictionary that uses as key the channel id and as value the list of packets of the file.
+    This function also removes the mac addresses listed as embedded_interfaces.
     :param capture_files:
     :param input_folder_name:
     :param embedded_interfaces:
