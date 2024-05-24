@@ -110,7 +110,7 @@ def clean_all_packets(all_packets, output_folder_name, capture_files, power_th, 
             except:
                 print('error in clean_pcap_file')
 
-    if len(capture_files) > 1:
+    if len(capture_files) >= 1:
         if merged is True:
             filename = '{}/{}-ch-merged-th{}.pcap'.format(output_folder_name, find_file_group(capture_files[0]),
                                                           power_th)

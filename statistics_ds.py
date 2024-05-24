@@ -34,10 +34,10 @@ def pcap_statistics(folder_name, filename, pkt_list, duration):
     offset = get_filename_timestamp(filename)
 
     # make plots
-    single_channel_folder_name = create_missing_folder('{}/single_channel'.format(folder_name))
+    single_channel_folder_name = create_missing_folder('{}/before_single_channel'.format(folder_name))
     single_channel_plots(mac_dict, columns, single_channel_folder_name, filename, offset, duration)
 
-    three_channels_folder_name = create_missing_folder('{}/three_channels'.format(folder_name))
+    three_channels_folder_name = create_missing_folder('{}/before_three_channels'.format(folder_name))
     three_channels_plots(mac_dict, columns, three_channels_folder_name, filename, offset, duration)
 
     # get the mac list

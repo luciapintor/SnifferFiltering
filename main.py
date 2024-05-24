@@ -27,7 +27,7 @@ if __name__ == '__main__':
                                     embedded_interfaces=embedded_interfaces)
 
             # plot unfiltered pcap files
-            pcap_statistics(folder_name=input_folder_name, filename=g + "-unfiltered.png",
+            pcap_statistics(folder_name=analysis_folder_name, filename=g + "-unfiltered.png",
                             pkt_list=all_packets, duration=duration)
             print("Removed all APs and known interfaces in {}".format(file_groups[g]))
 
