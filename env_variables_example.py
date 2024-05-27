@@ -5,7 +5,9 @@ import numpy as np
 # this folder name is used to create 2 folders:
 # _analysis: it contains merged files with different thresholds
 # _dataset: it contains a pcap file for each channel filtered with the selected power threshold
-input_folder_name = 'data'
+input_folder_name_main = 'data'
+input_folder_name_specific = 'A'
+input_folder_name = '{}/{}'.format(input_folder_name_main, input_folder_name_specific)
 
 # capture duration (used to scale plots)
 duration = 20 * 60
